@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Página Teste</title>
+
+        <script type="text/javascript" src="script.js"></script>
+
+    </head>
+    <body>
+        <h1>Página HTML do curso</h1>
+
+        <br/>
+        <br/>
+        <div id="redirecionamento">
+            <!--
+              Comando javascript(inserido no corpo do html) utilizado para redirecionar
+              da página atual para uma outra do próprio site do cliente ou até mesmo
+              páginas de fora do seu site, no caso do exemplo abaixo trocará o endereço
+              da página atual para o da página do Google.
+            -->
+            <button id="google" onclick="window.location.href = 'https://www.google.com' ">Ir para o Google (por html)</button>
+
+            <!--
+              Nome da função seguido por parênteses, onde é possível implementar
+              com parâmetros que serão retornados para dentro da função...
+            -->
+            <button id="googleF" onclick="redirecionar(id)">Ir para o Google (por função)</button>
+
+            <!--
+              O mesmo comando pode ser utilizado para redirecionar para a mesma página
+              a atualizando, para fazer isso é necessário inserir o comando javascript
+              recebendo ele mesmo, como demonstrado no exemplo abaixo:
+            -->
+            <button id="atualizacao" onclick="window.location.href = window.location.href">Atualizar a página (por html)</button>
+
+            <!--
+              Nome da função seguido por parênteses, onde é possível implementar
+              com parâmetros que serão retornados para dentro da função...
+            -->
+            <button id="atualizacaoF" onclick="redirecionar(id)">Atualizar a página (por função)</button>
+
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <!--
+          Para modificar o conteúdo HTML de certo trecho do código
+          em determinada ação de sua necessidade, é preciso que exista
+          um identificador(id) para o objeto em questão.
+      -->
+        <div id="area">
+            Alguma coisa
+        </div>
+
+        <br/>
+        <br/>
+
+        <!--
+        O comando document.getElementById('id') irá resgatar o elemento
+        cujo identificador (id), que está inserido no código fonte,
+        seja válido.
+        O ponto innerHTML irá substituir por completo o conteúdo interno
+        do elemento que o identificador (id) aponta.
+      -->
+        <button
+            onclick="document.getElementById('area').innerHTML = prompt('Digite algo interessante');">Fazer a ação</button>
+
+        <!--
+        O comando innerHTML também serve para que o usuário possa alterar o nome do botão
+      -->
+        <button onclick="this.innerHTML = prompt('Qual o nome do botão?');">
+            Mudar o nome do botão
+        </button>
+
+        <div id="areaF">
+            Alguma coisa Função
+        </div>
+
+        <br/>
+        <br/>
+
+        <!--
+        Mudar o texto por meio de funções
+      -->
+        <button onclick="fazerAcao()">Fazer a ação</button>
+
+        <div id="area2"></div>
+
+        <br/>
+        <br/>
+
+        <!--
+        Mudar o texto por meio de funções
+      -->
+        <button onclick="fazerAcao2('Lucas', 90)">Fazer a ação</button>
+
+        <!--
+        É inserido o título tipo h3 para a lista de Ingredientes
+      -->
+        <h3>
+            Ingredientes do Bolo
+        </h3>
+
+        <!--
+        É inserido o campo para o usuário preencher o ingrediente do bolo
+      -->
+        <input id="ingrediente" type="text"/>
+
+        <!--
+        É inserido o botão Adicionar para que o usuário possa inserir o ingrediente.
+        É chamado a função inserirIngrediente() para que o javascript insira
+        o Ingrediente preenchido.
+      -->
+        <button onclick="inserirIngrediente()">Adicionar</button>
+
+        <!--
+        É gerado a lista de compras com os itens que o usuário deseja Adicionar
+      -->
+        <ul id="listaIngredientes"></ul>
+
+        <!--
+        OPERAÇÔES
+      -->
+        <h1>
+            Campo 1
+        </h1>
+        <!--
+        Campo de texto input, para o usuário inserir o primeiro número
+        que gostaria para efetuar a operação.
+      -->
+        <input id="Campo1" type="number"/>
+
+        <h1>
+            Campo 2
+        </h1>
+        <!--
+        Campo de texto input, para o usuário inserir o segundo número
+        que gostaria de efetuar a operação.
+      -->
+        <input id="Campo2" type="number"/>
+
+        <br/>
+        <br/>
+
+        <!--
+        Botão que ao ser pressionado chama a função somar
+      -->
+        <button onclick="somar()">
+            Somar os números
+        </button>
+
+        <!--
+        Botão que ao ser pressionado chama a função subtrair
+      -->
+        <button onclick="subtrair()">
+            Subtrair os números
+        </button>
+
+        <!--
+        Botão que ao ser pressionado chama a função multiplicar
+      -->
+        <button onclick="multiplicar()">
+            Multiplicar os números
+        </button>
+
+        <!--
+        Botão que ao ser pressionado chama a função dividir
+      -->
+        <button onclick="dividir()">
+            Dividir os números
+        </button>
+
+        <br/>
+        <br/>
+        <!--
+        Divisão (div) onde aparecerá o resultado
+      -->
+        <div id="Resultado"></div>
+
+        <div id="nomes"></div>
+
+        <!--
+        Input para o usuário inserir o valor.
+        Poderia ser feito através do prompt também,
+        no código javascript
+      -->
+        <input id="inputUsuario" type="text"/>
+
+        <!--
+        O botão inserido chama a função verificador,
+        que irá verificar o valor digitado...
+      -->
+        <button type="button" onclick="verificador()">Verificar</button>
+
+        <div id="ResultadoIF"></div>
+
+    </body>
+</html>

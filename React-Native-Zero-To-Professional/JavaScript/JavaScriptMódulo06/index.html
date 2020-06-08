@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>EVENTOS</title>
+
+        <script type="text/javascript" src="script.js"></script>
+
+        <script>
+            window.onbeforeunload = function () {
+                return "Não vá embora, inscreva-se...";
+            };
+        </script>
+
+    </head>
+
+    <!--
+        Evento de Mouse
+        onMouseDown -> Faz a captura do evento de pressionar o clique do mouse
+                       tanto do botão esquerdo, quanto o direito.
+
+        onMouseUP -> Faz a captura do evento de despressionar o clique do mouse
+                     tanto do botão esquerdo, quanto o direito..
+
+        onMouseOver -> Faz a captura do evento de passar por cima (entrar
+                       na área) do objeto com o mouse.
+
+        onMouseOut -> Faz a captura do evento de sair de cima (sair da área)
+                     do objeto com o mouse.
+
+        onMouseMove -> Faz a captura do evento enquanto o usuário estiver com o
+                       mouse em cima do botão.
+
+        onClick -> Faz a captura do evento completo de pressionar e despressionar
+                   o botão esquerdo do mouse.
+
+        onContextMenu -> Faz a captura do evento completo de pressionar
+                         e despressionar o botão direito do mouse.
+
+        onDblClick -> Faz a captura do evento quando o usuário dá um duplo clique.
+      -->
+    <!--
+      <button
+          type="button"
+          onMouseDown="darCliqueBotao()"
+          onMouseUP="soltarCliqueBotao()"
+          onMouseOver="entrarNaArea()"
+          onMouseOut="sairDaArea()"
+          onMouseMove="moverNaArea()"
+          onclick="eventoCompletoDeClicarESoltarBotao()"
+          onContextMenu="return botaoDireito()"
+          onDblClick="cliqueDuplo()"
+      >EVENTO MOUSE</button>
+
+        onContextMenu="return botaoDireito()" -> Retorna para o parâmetro
+        onContextMenu o retorno da função botaoDireito que no caso retorna falso.
+      -->
+
+    <!--
+        EVENTOS DE TECLADO
+
+        onKeyDown -> Faz a captura do evento quando o usuário empurrar
+                     uma tecla qualquer do teclado.
+                         -> É passado como parâmetro da função, o evento ocorrido
+                         ao pressionar a tecla. Sendo necessário chamar o parâmetro
+                         com o nome de "event".
+
+        onKeyUp -> Faz a captura do evento quando o usuário despressionar
+                   uma tecla qualquer do teclado.
+                        -> É passado como parâmetro da função, o evento ocorrido
+                        ao despressionar a tecla. Sendo necessário chamar o
+                        parâmetro com o nome de "event".
+
+        onKeyPress -> Faz a captura do evento enquanto o usuário estiver pressionando
+                      uma tecla qualquer do teclado.
+                        -> É passado como parâmetro da função, o evento ocorrido
+                        ao manter a tecla pressionada. Sendo necessário chamar o
+                        parâmetro com o nome de "event".
+
+        event.keyCode -> retorna o código da tecla digitada.
+
+        event.shiftKey -> retorna se a tecla shift foi ou não (True or False)
+                          pressionada
+
+        event.ctrlKey -> retorna se a tecla control foi ou não (True or False)
+                         pressionada
+
+        event.altKey -> retorna se a tecla alt foi ou não (True or False)
+                        pressionada
+
+        event.metaKey -> retorna se a tecla do windows foi ou não (True or False)
+                         pressionada
+      -->
+
+    <!--
+        EVENTOS DE PÁGINA
+
+        onLoad="carregar()" -> Chama a função "carregar()" quando terminar de
+                               carregar a página garantindo assim, que o elemento
+                               que quer manipular já exista na página.
+                                    OBS: Sem função o código irá carregar até o
+                                    fechamento da tag "Head" fazendo com que seja
+                                    executado antes de chegar no body, fazendo
+                                    com que o elemento que está querendo manipular
+                                    ainda não existe.
+
+        onBeForUnload
+
+        onUnLoad="fechar()" -> Chama a função "fechar()" quando o usuário fechar
+                                a página.
+                                    OBS: Não é possível manipular elementos, pois
+                                    a página já estará sendo descarregada e fechada,
+                                    não tendo sentido manipular eventos.
+                            ->  Quase não funciona, pois são poucas as coisas que
+                                poderá ser executada, pois a página já estará fechando.
+                            -> Teoricamente existe, porém na prática não é recomendada
+                               a sua utilização.
+                            -> É utilizada para a remoção de cookies e afins.
+      -->
+
+    <!--
+        EVENTOS DE FORMULÁRIOS
+
+        onChange -> Faz a captura do evento no objeto select, ao mudar de opção.
+                      -> É necessário enviar como parâmetro da função, que será
+                          chamada ao executar o evendo, o próprio objeto select
+                          para ter acesso a suas propriedades.
+                      -> Para isso é necessário utilizar o "this".
+
+        onfocus -> Faz a captura do evento quando o mouse estiver ativo(focado)
+                   em um campo de texto.
+
+        onBlur -> Faz a captura do evento quando o mouse não estiver mais
+                  ativo (saiu do foco. Está desfocado) no campo que está
+                  atuando.
+
+    Temos como exemplo um calendário próprio, quando o cursos se focar(onFocus)
+    no campo desejado iremos abrir o calendário, quando o cursos desfocar(onBlur)
+    fechamos o calendário.
+
+       onSubmit -> Faz a captura do evento quando o formulário é enviado.
+                   É colocado direto na tag do formulário.
+
+      -->
+
+    <body onLoad="carregar()">
+
+        <input
+            type="text"
+            onkeydown="empurrarTecla(event)"
+            onKeyUp="despressionarTecla(event)"
+            onKeyPress="pressionarTecla(event)"
+            id="inputTeclado"/>
+
+        <!--
+    <form method="post" onSubmit="return envio()">
+        <input type="text" name="nome" onFocus="focou()" onblur="desfocou()" />
+
+        <br />
+        <br />
+
+          <select name="cidade" onChange="mudou(this)"">
+              <option>none</option>
+              <option>São Paulo</option>
+              <option>Rio de Janeiro</option>
+              <option>Belo Horizonte</option>
+              <option>Recife</option>
+          </select>
+
+          <br />
+          <br />
+
+        <input type="submit" value="Enviar" />
+    </form>
+  -->
+
+    </body>
+</html>

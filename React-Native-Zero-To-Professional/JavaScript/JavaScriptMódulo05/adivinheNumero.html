@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Adivinhe um número</title>
+
+        <style type="text/css">
+            #n1 {
+                width: 200px;
+                height: 200px;
+                border: 1px solid #000;
+                float: left;
+                margin-right: 10px;
+                font-size: 100px;
+                line-height: 200px;
+                text-align: center;
+                background-color: #EEE;
+            }
+            #n2 {
+                width: 200px;
+                height: 200px;
+                border: 1px solid #000;
+                float: left;
+                margin-right: 10px;
+                font-size: 100px;
+                text-align: center;
+                line-height: 200px;
+            }
+
+            button {
+                width: 410px;
+                height: 40px;
+                margin-top: 10px;
+                font-size: 20px;
+            }
+
+        </style>
+
+        <script type="text/javascript" src="scriptAdivinheNumero.js"></script>
+    </head>
+    <body onload="resetar()">
+        <div id="n1">?</div>
+        <input type="text" id="n2"/>
+        <div style="clear: both"></div>
+        <button type="button" onclick="adivinhe()">Verificar</button>
+
+    </body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Adivinhe um número</title>
+    <script type="text/javascript" src="scriptAdivinheNumero.js"></script>
+  </head>
+  <body>
+      <button onclick="adivinhe()" type="button">Verificar</button>
+  </body>
+</html>
+-->
